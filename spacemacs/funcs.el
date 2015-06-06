@@ -652,13 +652,15 @@ For instance pass En as source for english."
   )
 
 (defun spacemacs/insert-line-above-no-indent (count)
+  "Insert a new line above with no indentation."
   (interactive "p")
   (save-excursion
-    (evil-previous-line)
-    (evil-move-end-of-line)
-    (while (> count 0)
-      (insert "\n")
-      (setq count (1- count)))))
+    (evil-move-beginning-of-line)
+    (dotimes (c count)
+      (insert "\n")))
+  ;; Fixes line insertion at first character in buffer
+  (when (equal 1 (point))
+    (forward-char count)))
 
 (defun spacemacs/insert-line-below-no-indent (count)
   "Insert a new line below with no identation."
