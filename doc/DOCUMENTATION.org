@@ -165,6 +165,9 @@
  - [[#thank-you][Thank you]]
 
 * Core Pillars
+:PROPERTIES:
+:CUSTOM_ID: core-pillars
+:END:
 Four core pillars: Mnemonic, Discoverability, Consistency, "Crowd-Configured".
 
 If any of these core pillars is violated open an issue and we'll fix it.
