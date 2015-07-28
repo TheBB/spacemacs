@@ -2796,11 +2796,6 @@ It is a string holding:
 
       ;; BEGIN define modeline segments
 
-      (spacemacs|define-mode-line-segment workspace-number
-        (spacemacs/workspace-number)
-        :when (and (bound-and-true-p eyebrowse-mode)
-                   (spacemacs/workspace-number)))
-
       (spacemacs|define-mode-line-segment window-number
         (spacemacs/window-number)
         :when (and (bound-and-true-p window-numbering-mode)
@@ -3012,7 +3007,8 @@ The return vaule is a `segment' struct. Its `OBJECTS' list may be nil."
               (setf (segment-objects result)
                     (mapcar (lambda (s)
                               (if (spacemacs//imagep s) s (powerline-raw s face)))
-                            (funcall segment-symbol))))
+                            (when (fboundp segment-symbol)
+                              (funcall segment-symbol)))))
              ;; A literal value
              (t (setf (segment-objects result)
                       (list (powerline-raw (format "%s" segment) face))))))

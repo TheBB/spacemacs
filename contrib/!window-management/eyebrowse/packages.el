@@ -10,7 +10,8 @@
 ;;
 ;;; License: GPLv3
 
-(setq eyebrowse-packages '(eyebrowse))
+(setq eyebrowse-packages '(eyebrowse
+                           powerline))
 
 (defun eyebrowse/init-eyebrowse ()
   (use-package eyebrowse
@@ -91,5 +92,11 @@
         ("n" eyebrowse-next-window-config)
         ("N" eyebrowse-prev-window-config)
         ("p" eyebrowse-prev-window-config)
-        ("r" spacemacs/workspaces-ms-rename :exit t)
-        ("s" eyebrowse-switch-to-window-config :exit t)))))
+        ("r" spacemacs/workspaces-ms-rename: :exit t)
+        ("c" eyebrowse-close-window-config :exit t)))))
+
+(defun eyebrowse/post-init-powerline ()
+  (spacemacs|define-mode-line-segment workspace-number
+    (spacemacs/workspace-number)
+    :when (and eyebrowse-mode
+               (spacemacs/workspace-number))))
