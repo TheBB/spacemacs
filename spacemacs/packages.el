@@ -2812,7 +2812,7 @@ must be a valid segment specification, see documentation for
       (defvar spacemacs-mode-line-right
         '((battery :when active)
           selection-info
-          ((buffer-encoding-abbrev
+          (((buffer-encoding-abbrev :when long)
             point-position
             line-column)
            :separator " | ")
@@ -3200,6 +3200,7 @@ one of `l' or `r'."
                                 (if ascii ascii unicode))))
                     (diminish mode dim)))))))
         (let* ((active (powerline-selected-window-active))
+               (long (> (window-total-width) 87))
                (lhs (spacemacs//mode-line-prepare-left))
                (rhs (spacemacs//mode-line-prepare-right))
                (line-face (if active 'powerline-active2 'powerline-inactive2)))
