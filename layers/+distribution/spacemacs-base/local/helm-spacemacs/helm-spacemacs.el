@@ -126,7 +126,8 @@
 (defun helm-spacemacs//layer-source ()
   "Construct the helm source for the layer section."
   `((name . "Layers")
-    (candidates . ,(sort (configuration-layer/get-layers-list) 'string<))
+    (candidates . ,(mapcar (lambda (s) (format "%S" s))
+                    (sort (configuration-layer/get-layers-list) 'string<)))
     (candidate-number-limit)
     (action . (("Open README.org"
                 . helm-spacemacs//layer-action-open-readme)
