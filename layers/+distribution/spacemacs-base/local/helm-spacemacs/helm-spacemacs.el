@@ -66,7 +66,8 @@
                    ,(helm-spacemacs//layer-source)
                    ,(helm-spacemacs//package-source)
                    ,(helm-spacemacs//dotspacemacs-source)
-                   ,(helm-spacemacs//toggle-source))))
+                   ,(helm-spacemacs//toggle-source)
+                   ,(helm-spacemacs//faq-source))))
 
 (defun helm-spacemacs//documentation-source ()
   "Construct the helm source for the documentation section."
@@ -255,6 +256,38 @@
   (re-search-forward (format "^[a-z\s\\(\\-]*%s" candidate))
   (beginning-of-line))
 
+(defun helm-spacemacs//faq-source ()
+  "Construct the helm source for the FAQ."
+  `((name . "FAQ")
+    (candidates . ,(helm-spacemacs//faq-candidates))
+    (candidate-number-limit)
+    (action . (("Go to question" . helm-spacemacs//go-to-faq-question)))))
+
+(defun helm-spacemacs//faq-candidates ()
+  "Return all the candidates in the FAQ, i.e. the headings."
+  (let* ((filename (concat spacemacs-docs-directory "FAQ.org"))
+         (min-depth 2)
+         (max-depth 8))
+    (with-current-buffer (find-file-noselect filename)
+      (save-excursion
+        (goto-char (point-min))
+        (cl-loop with width = (window-width)
+                 while (re-search-forward org-complex-heading-regexp nil t)
+                 if (let ((num-stars (length (match-string-no-properties 1))))
+                      (and (>= num-stars min-depth) (<= num-stars max-depth)))
+                 collect `(,(let ((heading (funcall 'match-string 4))
+                                  (level (length (match-string-no-properties 1))))
+                              (org-format-outline-path
+                               (append (org-get-outline-path t level heading)
+                                       (list heading)) width))
+                           . ,(point-marker)))))))
+
+(defun helm-spacemacs//go-to-faq-question (marker)
+  "Go to a candidate in the FAQ."
+  (switch-to-buffer (marker-buffer marker))
+  (goto-char (marker-position marker))
+  (org-show-context)
+  (org-show-entry))
 
 (provide 'helm-spacemacs)
 
