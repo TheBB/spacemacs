@@ -69,6 +69,14 @@
                    ,(helm-spacemacs//toggle-source)
                    ,(helm-spacemacs//faq-source))))
 
+;;;###autoload
+(defun helm-spacemacs-faq (arg)
+  "Looking in the FAQ with helm."
+  (interactive "P")
+  (helm-spacemacs-mode)
+  (helm :buffer "*helm: spacemacs*"
+        :sources `(,(helm-spacemacs//faq-source))))
+
 (defun helm-spacemacs//documentation-source ()
   "Construct the helm source for the documentation section."
   (helm-build-sync-source "Spacemacs Documentation"
@@ -263,6 +271,8 @@
     (candidate-number-limit)
     (action . (("Go to question" . helm-spacemacs//go-to-faq-question)))))
 
+;; Code inspired from here:
+;; https://github.com/emacs-helm/helm/blob/master/helm-org.el#L95
 (defun helm-spacemacs//faq-candidates ()
   "Return all the candidates in the FAQ, i.e. the headings."
   (let* ((filename (concat spacemacs-docs-directory "FAQ.org"))
@@ -275,7 +285,7 @@
                  while (re-search-forward org-complex-heading-regexp nil t)
                  if (let ((num-stars (length (match-string-no-properties 1))))
                       (and (>= num-stars min-depth) (<= num-stars max-depth)))
-                 collect `(,(let ((heading (funcall 'match-string 4))
+                 collect `(,(let ((heading (funcall 'match-string-no-properties 4))
                                   (level (length (match-string-no-properties 1))))
                               (org-format-outline-path
                                (append (org-get-outline-path t level heading)
