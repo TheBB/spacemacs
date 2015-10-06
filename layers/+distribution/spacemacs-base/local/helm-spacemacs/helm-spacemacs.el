@@ -29,6 +29,7 @@
 (require 'cl)
 (require 'ht)
 (require 'helm)
+(require 'helm-org)
 (require 'core-configuration-layer)
 
 (defvar helm-spacemacs-all-layers nil
@@ -271,26 +272,15 @@
     (candidate-number-limit)
     (action . (("Go to question" . helm-spacemacs//go-to-faq-question)))))
 
-;; Code inspired from here:
-;; https://github.com/emacs-helm/helm/blob/master/helm-org.el#L95
 (defun helm-spacemacs//faq-candidates ()
-  "Return all the candidates in the FAQ, i.e. the headings."
-  (let* ((filename (concat spacemacs-docs-directory "FAQ.org"))
-         (min-depth 2)
-         (max-depth 8))
-    (with-current-buffer (find-file-noselect filename)
-      (save-excursion
-        (goto-char (point-min))
-        (cl-loop with width = (window-width)
-                 while (re-search-forward org-complex-heading-regexp nil t)
-                 if (let ((num-stars (length (match-string-no-properties 1))))
-                      (and (>= num-stars min-depth) (<= num-stars max-depth)))
-                 collect `(,(let ((heading (funcall 'match-string-no-properties 4))
-                                  (level (length (match-string-no-properties 1))))
-                              (org-format-outline-path
-                               (append (org-get-outline-path t level heading)
-                                       (list heading)) width))
-                           . ,(point-marker)))))))
+  (delq nil (mapcar (lambda (c)
+                      (let ((str (substring-no-properties (car c))))
+                        (when (string-match "\\`\\([^/]*\\)/\\(.*\\)\\'" str)
+                          (cons (concat (match-string 1 str) ": "
+                                        (match-string 2 str))
+                                (cdr c)))))
+                    (helm-get-org-candidates-in-file
+                     (concat spacemacs-docs-directory "FAQ.org") 2 8 nil t))))
 
 (defun helm-spacemacs//go-to-faq-question (marker)
   "Go to a candidate in the FAQ."
