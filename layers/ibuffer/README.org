@@ -9,21 +9,13 @@
  - [[Key bindings][Key bindings]]
 
 * Description
-
 This layer configures Emacs ibuffer for Spacemacs.
 
 * Install
-
 ** Layer
-
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-(setq-default dotspacemacs-configuration-layers '(ibuffer))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 ** Grouping buffers
-
 Buffers can be grouped by major-modes or projectile projects.
 By default buffers are grouped by major-modes.
 

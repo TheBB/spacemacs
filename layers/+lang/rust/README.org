@@ -18,11 +18,7 @@ though Racer needs some additional configurations as described on their page.
 
 * Install
 ** Layer
-To use this layer, add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-(setq-default dotspacemacs-configuration-layers '(rust))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 ** Cargo
 [[http://doc.crates.io/index.html][Cargo]] is a project management command line tool for Rust. Installation

@@ -19,7 +19,6 @@
    - [[Code Definition Jump][Code Definition Jump]]
 
 * Description
-
 This layer adds support for [[http://elixir-lang.org/][Elixir]] .
 
 [[https://github.com/tonini/alchemist.el][Alchemist]] brings the Elixir tooling to Emacs and comes with a bunch of
@@ -35,17 +34,10 @@ features like:
 - Integration with [[http://company-mode.github.io/][company-mode]]
 
 * Install
-
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-(setq-default dotspacemacs-configuration-layers '(elixir))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 * Key bindings
-
 ** Refcard
-
 You find and overview of all the key-bindings on the [[file:alchemist-refcard.pdf][Alchemist-Refcard]].
 
 ** Help

@@ -21,11 +21,7 @@ This layer provides bindings for using [[http://cscope.sourceforge.net][Cscope]]
 
 * Install
 ** Layer
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-(setq-default dotspacemacs-configuration-layers '(cscope))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 ** Cscope
 Install =Cscope= through your package manager, or download it from the

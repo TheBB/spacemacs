@@ -21,19 +21,14 @@ This layer provides support for the Ruby language with [[https://github.com/zens
 Optionally Enh Ruby Mode can be replaced with the built-in Emacs Ruby Mode.
 
 * Install
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(ruby))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 This layer supports two different Ruby modes: Emacs' built-in Ruby Mode and
 [[https://github.com/zenspider/enhanced-ruby-mode][enh-ruby-mode]].  By default the built-in Ruby mode is enabled.  To switch to the
 =enh-ruby-mode= set =ruby-enable-enh-ruby-mode= to t:
 
 #+BEGIN_SRC emacs-lisp
-  (defun dotspacemacs-configuration-layers ()
-     '((ruby :variables ruby-enable-enh-ruby-mode t)))
+  (ruby :variables ruby-enable-enh-ruby-mode t)
 #+END_SRC
 
 ** Prerequisites

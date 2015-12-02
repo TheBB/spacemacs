@@ -18,6 +18,7 @@
    - [[Update packages][Update packages]]
  - [[Configuration layers][Configuration layers]]
    - [[Purpose][Purpose]]
+   - [[How to install][How to install]]
    - [[Structure][Structure]]
    - [[Packages][Packages]]
      - [[Within a layer][Within a layer]]
@@ -334,6 +335,35 @@ the =python= layer provides auto-completion, syntax checking, and repl support
 for python files. This approach helps keep configuration organized and reduces
 overhead for the user by keeping them from having to think about what packages
 to install
+
+** How to install
+In your =~/.spacemacs= file in the function =dotspacemacs/layers=, the variable
+=dotspacemacs-configuration-layers= is set. To enable a layer, simply add it to
+this list. The code looks like this.
+
+#+begin_src emacs-lisp
+  (setq-default
+   ;; ...
+   dotspacemacs-configuration-layers
+   '(
+     ;; ...
+     some-layer ; <- add a layer
+     ;; ...
+     )
+   ;; ...
+   )
+#+end_src
+
+Some layers have special variables that you might like to change. To do this,
+use a construct like the following.
+
+#+begin_src emacs-lisp
+  (some-layer :variables
+              variable-a value-a
+              variable-b value-b
+              ;;....
+              )
+#+end_src
 
 ** Structure
 Configuration is organized in layers. Each layer has the following structure:

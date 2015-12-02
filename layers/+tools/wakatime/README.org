@@ -38,14 +38,15 @@ sudo pip install wakatime
 #+END_SRC
 
 ** Layer
-To use this contribution add it to your =~/.spacemacs=
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
+
+Make sure to specify the API key and the path to wakatime.
 
 #+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers
-                '((wakatime :variables
-                            wakatime-api-key    "your-api-key"
-                            ;; use the actual wakatime path
-                            wakatime-cli-path   "/usr/bin/wakatime")))
+  (wakatime :variables
+            wakatime-api-key    "your-api-key"
+            ;; use the actual wakatime path
+            wakatime-cli-path   "/usr/bin/wakatime")
 #+END_SRC
 
 ** API Keys
@@ -57,12 +58,11 @@ Restart emacs and it will prompt you for the location of the wakatime installer
 =/usr/bin/wakatime= for example) and that's it.
 
 *** Note to =venv-workon= users:
-
 Right now wakatime uses =python= as python bin executable, so if you use
 =venv-workon= because you have python projects which need to have a virtual
-env., then wakatime, which is installed system-wide will have trouble locating
-wakatime files, so it's best to define by yourself the python path where
-wakatime can always find it's stuff, via this variable:
+environment, then wakatime, which is installed system-wide will have trouble
+locating wakatime files, so it's best to define by yourself the python path
+where wakatime can always find it's stuff, via this variable:
 
 #+BEGIN_SRC emacs-lisp
 (setq wakatime-python-bin "/path/to/python")

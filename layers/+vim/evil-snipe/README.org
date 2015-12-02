@@ -8,9 +8,9 @@
  - [[Install][Install]]
    - [[Layer][Layer]]
    - [[Improved f and t search behavior][Improved f and t search behavior]]
-   - [[Two-character search with s][Two-character search with s]]
-   - [[More scopes][More scopes]]
-   - [[Symbol groups][Symbol groups]]
+ - [[Two-character search with s][Two-character search with s]]
+ - [[More scopes][More scopes]]
+ - [[Symbol groups][Symbol groups]]
  - [[Key bindings][Key bindings]]
 
 * Description
@@ -26,17 +26,10 @@ search command, namely ~s~ / ~S~.
 buffer with two chars.
 
 * Install
-
 ** Layer
-
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-(setq-default dotspacemacs-configuration-layers '(evil-snipe))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 ** Improved f and t search behavior
-
 With evil-snipe you can define your own search scope for ~f~ and ~t~ searches
 which means that you won't have to jump to the correct line before searching
 with ~f~ / ~t~ / ~F~ / ~T~. And after you have found a match, you can just press
@@ -46,12 +39,10 @@ This alternate behavior is disabled by default, to enable it set the
 layer variable =evil-snipe-enable-alternate-f-and-t-behaviors= to =t=:
 
 #+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers
-    '(evil-snipe :variables evil-snipe-enable-alternate-f-and-t-behaviors t ))
+  (evil-snipe :variables evil-snipe-enable-alternate-f-and-t-behaviors t )
 #+END_SRC
 
-** Two-character search with s
-
+* Two-character search with s
 With the ~s~/~S~ keys you can do a simple search like ~f~/~t~, but instead of
 searching for one character, you search for two. This makes the search a lot
 more precise than regular ~f~/~t~ searches. While you can search forward or
@@ -59,7 +50,7 @@ backwards in the buffer with ~/~ and ~?~, ~s~ / ~S~ are much easier to reach,
 don't require you to press enter and they are precise enough for many common
 purposes.
 
-** More scopes
+* More scopes
 
 Evil-snipe also adds several scope options for searches (set =evil-snipe-scope=
 and =evil-snipe-repeat-scope= to one of these, the default value is =buffer=):
@@ -77,7 +68,7 @@ If you do not want to replace the regular ~f~ / ~F~ / ~t~ / ~T~ behavior, just
 remove this line from =evil-snipe/packages.el=:
 =(evil-snipe-replace-evil)=
 
-** Symbol groups
+* Symbol groups
 
 With symbol groups you can let a character stand for a regex, for example a
 group of characters. By adding a pair of ='(CHAR REGEX)= to the list
@@ -101,4 +92,3 @@ all function definitions in a buffer!
 #+END_SRC
 
 * TODO Key bindings
-

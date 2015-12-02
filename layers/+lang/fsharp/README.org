@@ -11,23 +11,15 @@
    - [[REPL][REPL]]
 
 * Description
-
 This layer adds support for F# language using [[https://github.com/fsharp/fsharpbinding][fsharpbinding]].
 
 * Packages Included
-
 - [[https://github.com/fsharp/fsharpbinding][fsharp-mode]]
   
 * Install
-
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(fsharp))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 * Key Bindings
-
 
 | Key Binding | Description                |
 |-------------+----------------------------|

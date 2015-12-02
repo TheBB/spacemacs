@@ -32,11 +32,7 @@ It is also possible to give a label to a the current workspace by pressing
 
 * Install
 ** Layer
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-(setq-default dotspacemacs-configuration-layers '(eyebrowse))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 ** Removing additional help
 Once you know the key bindings to navigate between the workspaces you

@@ -15,7 +15,6 @@
    - [[Browse files][Browse files]]
 
 * Description
-
 This layers adds support for [[http://github.com][Github]].
 
 ** Features:
@@ -26,19 +25,11 @@ This layers adds support for [[http://github.com][Github]].
 - [[https://github.com/dgtized/github-clone.el][Github clone]] allows for easy cloning and forking of repositories.
 
 * Install
-
 ** Layer
-
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-(setq-default dotspacemacs-configuration-layers '(github))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 * Key Bindings
-
 ** magit-gh-pulls
-
 In a =magit status= buffer (~SPC g s~):
 
 | Key Binding | Description                                     |

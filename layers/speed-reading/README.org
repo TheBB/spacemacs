@@ -10,11 +10,7 @@
 A speed reading mode for Emacs.
 
 * Install
-To use this contribution add it to your =~/.spacemacs=
-
-#+begin_src emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(speed-reading))
-#+end_src
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 * Key bindings
 

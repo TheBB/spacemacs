@@ -6,27 +6,19 @@
 * Table of Contents                                         :TOC_4_org:noexport:
  - [[Description][Description]]
  - [[Install][Install]]
-   - [[Layer][Layer]]
  - [[Working with Nim][Working with Nim]]
-   - [[Nim commands (start with =m=):][Nim commands (start with =m=):]]
+   - [[Nim commands][Nim commands]]
 
 * Description
-
 This layer adds support for nim (nimrod).
 
 * Install
-
-** Layer
-
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(nim))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 * Working with Nim
 
-** Nim commands (start with =m=):
+** Nim commands
+
 | Key Binding | Description                |
 |-------------+----------------------------|
 | ~SPC m c r~ | nim compile --run main.nim |

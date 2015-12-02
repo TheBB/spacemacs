@@ -10,7 +10,6 @@
  - [[Key bindings][Key bindings]]
 
 * Description
-
 This layer adds PHP language support to Spacemacs.
 
 ** Features:
@@ -23,13 +22,6 @@ The =gtags= layer is recommended to benefit from better =eldoc= and
 =helm-gtags=.
 
 * Install
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(php))
-#+END_SRC
-
-* Key bindings
-
-TODO ! :-)
+* TODO Key bindings

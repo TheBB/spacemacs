@@ -32,11 +32,7 @@ Layer for [[http://www.emacswiki.org/emacs/ERC][ERC IRC chat]].
 
 * Install
 ** Layer
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(erc))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 ** OS X
 It's recommended to install the [[https://github.com/alloy/terminal-notifier][terminal-notifier gem]] so that you get

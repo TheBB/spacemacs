@@ -23,14 +23,10 @@ layer provides key bindings for all of geeknote.el's exposed features.
 
 * Install
 ** Layer
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-(setq-default dotspacemacs-configuration-layers '(evernote))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 ** geeknote
-The command =geeknote= is expected to be present in your =$PATH=. To
+The command =geeknote= is expected to be present in your =PATH=. To
 obtain this utility, please refer to the official geeknote
 [[http://www.geeknote.me/documentation/][documentation]].
 
@@ -40,7 +36,7 @@ this up, run the following command in your terminal after successfully
 installing =geeknote=:
 
 #+BEGIN_SRC sh
-  $ geeknote settings --editor "emacsclient"
+  geeknote settings --editor "emacsclient"
 #+END_SRC
 
 If you would prefer to customize the geeknote command to be used such as

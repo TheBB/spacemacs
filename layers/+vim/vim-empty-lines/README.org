@@ -6,7 +6,6 @@
  - [[Install][Install]]
 
 * Description
-
 This layer is a drop-in replacement for the =vi-tilde-fringe= mode, for those
 who desire behaviour closer to =vim='s.
 
@@ -18,9 +17,4 @@ behaviour with trailing empty lines matches =vim='s behaviour.
 For details, see the [[https://github.com/jmickelin/vim-empty-lines-mode][vim-empty-lines-mode]] repository.
 
 * Install
-
-To use this contribution add it to your =~/.spacemacs=.
-
-#+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(vim-empty-lines))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.

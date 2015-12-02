@@ -26,11 +26,7 @@ This layer adds support for LaTeX files with [[https://savannah.gnu.org/projects
 
 * Install
 ** Layer
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(latex))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 ** Auto-completion
 Add the layer =auto-completion= to the variable

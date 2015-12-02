@@ -3,12 +3,11 @@
 
 * Table of Contents                                         :TOC_4_org:noexport:
  - [[Description][Description]]
-   - [[Features][Features]]
-   - [[Mouse bindings][Mouse bindings]]
-   - [[Key bindings][Key bindings]]
+ - [[Features][Features]]
+ - [[Mouse bindings][Mouse bindings]]
+ - [[Key bindings][Key bindings]]
 
 * Description
-
 This layer is a port contribution layer for vim-vinegar for emacs.
 
 A port of tpope's vinegar.vim
@@ -16,17 +15,16 @@ A port of tpope's vinegar.vim
 with a limited number of details and exposing the ~-~ command in all
 buffers to enter dired.
 
-** Features
-
--  navigation up folders with ~-~ key
--  simplify dired buffer to show only file names
--  better evil/vim bindings for navigation within dired buffer
--  keep only one active dired buffer
+* Features
+-  Navigation up folders with the ~-~ key
+-  Simplify dired buffer to show only file names
+-  Better evil/vim bindings for navigation within dired buffer
+-  Keep only one active dired buffer
 -  Use dired-k extension to show time / vcs related information in
    single bar
--  right mouse click moves up directory if in blank space or shows context menu
+-  Right mouse click moves up directory if in blank space or shows context menu
 
-** Mouse bindings
+* Mouse bindings
 
 | Mouse Binding | Description                                   |
 |---------------+-----------------------------------------------|
@@ -34,7 +32,7 @@ buffers to enter dired.
 | ~mouse-2~     | (Dired) Open clicked file in other-window     |
 | ~mouse-3~     | (Dired) Open context popup or go up directory |
 
-** Key bindings
+* Key bindings
 
 | Key Binding | Description                                        |
 |-------------+----------------------------------------------------|

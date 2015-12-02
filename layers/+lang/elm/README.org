@@ -66,11 +66,7 @@ To build from source, see instructions here:
 [[https://github.com/elm-lang/elm-platform][https://github.com/elm-lang/elm-platform]]
 
 ** elm-mode
-To use this contribution, add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(elm))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 ** elm-oracle
 ~elm-oracle~ can be used to show type signatures and docs for tokens under the
@@ -117,7 +113,6 @@ can be controlled by passing in these variables in your =~/.spacemacs=:
 #+END_SRC
 
 * Key bindings
-
 ** elm-make
 
 | Key Binding | Description                                  |

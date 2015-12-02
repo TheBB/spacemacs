@@ -18,7 +18,6 @@
    - [[Make helm-dash use zeal or dash docsets by default.][Make helm-dash use zeal or dash docsets by default.]]
 
 * Description
-+*This layer works only on OS X for the moment*+
 - [[http://kapeli.com/dash][dash]] :: Is a great tool for quick access to various sets of documentation,
           only available in OS X.
 
@@ -34,29 +33,20 @@
                    prefix argument C-u to edit the search string first.
 
 * Install
-
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-(setq-default dotspacemacs-configuration-layers '(dash))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 ** Dash (OS X)
-
 You have to install [[http://kapeli.com/dash][dash]] on your machine.
 
 It is recommended to set the =HUD mode= in your Dash application preferences
 when using this layer. 
 
-
 ** Zeal (Linux & Windows)
-
 You have to install [[http://zealdocs.org/][zeal]] on your machine.
 
 Then install the docsets you use more frequently
 
 ** Check Documentation for x-at-point
-
 See the documentation [[https://github.com/stanaka/dash-at-point#Usage][dash-at-point-usage]] , or [[https://github.com/jinzhu/zeal-at-point][zeal-at-point]] for more
 information on customizing specific docsets for modes.
 

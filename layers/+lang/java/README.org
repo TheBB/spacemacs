@@ -27,11 +27,7 @@ This layer adds support for the Java language using the [[http://eclim.org][Ecli
 
 * Layer Installation
 ** Layer
-Add this layer to your =~/.spacemacs=.
-
-#+BEGIN_SRC elisp
-(setq-default dotspacemacs-configuration-layers '(java))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 ** Eclim
 Eclim provides the ability to access Eclipse features such as code completion,
@@ -56,6 +52,7 @@ option in =emacs-eclim= itself.
 * Key bindings
 ** Java-mode
 *** Project management
+
 | Key Binding | Description                    |
 |-------------+--------------------------------|
 | ~SPC m p b~ | Build project                  |
@@ -70,6 +67,7 @@ option in =emacs-eclim= itself.
 | ~SPC m p u~ | Update project                 |
 
 *** Maven
+
 | Key Binding | Description                    |
 |-------------+--------------------------------|
 | ~SPC m m i~ | Run maven clean install        |
@@ -80,6 +78,7 @@ option in =emacs-eclim= itself.
 | ~SPC m m t~ | Run maven test                 |
 
 *** Goto
+
 | Key Binding | Description                                 |
 |-------------+---------------------------------------------|
 | ~M-,~       | jump back from go to declaration/definition |
@@ -87,6 +86,7 @@ option in =emacs-eclim= itself.
 | ~SPC m g t~ | go to type definition                       |
 
 *** Refactoring
+
 | Key Binding | Description      |
 |-------------+------------------|
 | ~SPC m r i~ | optimize imports |
@@ -94,6 +94,7 @@ option in =emacs-eclim= itself.
 | ~SPC m r r~ | Rename symbol    |
 
 *** Documentation, Find
+
 | Key Binding | Description                            |
 |-------------+----------------------------------------|
 | ~SPC m f f~ | general find in project                |
@@ -101,6 +102,7 @@ option in =emacs-eclim= itself.
 | ~SPC m h u~ | show usages for symbol at point        |
 
 *** Problems
+
 | Key Binding | Description                                |
 |-------------+--------------------------------------------|
 | ~SPC m e a~ | set all problems for next/prev action      |
@@ -114,6 +116,7 @@ option in =emacs-eclim= itself.
 | ~SPC m e w~ | set warnings for next/prev action          |
 
 *** Tests
+
 | Key Binding | Description                                                   |
 |-------------+---------------------------------------------------------------|
 | ~SPC m t t~ | run JUnit tests for current method or current file or project |

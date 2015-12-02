@@ -8,14 +8,8 @@
  - [[Install][Install]]
 
 * Description
-
 Very basic layer for Erlang with support for basic =syntax-checking= and
 =auto-completion= with the corresponding layers.
 
 * Install
-
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(erlang))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.

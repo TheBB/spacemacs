@@ -109,11 +109,7 @@ already a ~SPC w~ key binding for working with windows.
 - spacemacs
 
 * Install
-To use this contribution add it to your =~/.spacemacs=
-
-#+begin_src emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(bepo))
-#+end_src
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 * Key bindings
 Thanks to `which-keys`, you shouldn't probably have to go through this list, the

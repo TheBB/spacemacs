@@ -16,11 +16,7 @@ This layer aims at providing support for the Puppet DSL using [[https://github.c
 Puppetfile support via [[http://melpa.org/#/puppetfile-mode][puppetfile-mode]]
 
 * Install
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(puppet))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 * Key bindings
 The following key bindings are available in Puppet Mode:

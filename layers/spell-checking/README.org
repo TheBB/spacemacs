@@ -15,11 +15,7 @@ This layer provides spell checking using [[http://www-sop.inria.fr/members/Manue
 
 * Install
 ** Layer
-To use this configuration layer add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-(setq-default dotspacemacs-configuration-layers '(spell-checking))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 ** Spell Checker Configuration
 The built-in Emacs variable that controls which external spell-checking program
@@ -36,8 +32,7 @@ toggled off with ~SPC t S~. You can default this to off by setting the variable
 =spell-checking-enable-by-default= to =nil=:
 
 #+BEGIN_SRC emacs-lisp
-(setq-default dotspacemacs-configuration-layers
-  '((spell-checking :variables spell-checking-enable-by-default nil)))
+  (spell-checking :variables spell-checking-enable-by-default nil)
 #+END_SRC
 
 ** Enabling auto-dictionary-mode
@@ -47,8 +42,7 @@ the variable =spell-checking-enable-auto-dictionary= to something other than
 =nil=:
 
 #+BEGIN_SRC emacs-lisp
-(setq-default dotspacemacs-configuration-layers
-  '((spell-checking :variables spell-checking-enable-auto-dictionary t)))
+  (spell-checking :variables spell-checking-enable-auto-dictionary t)
 #+END_SRC
 
 Some people encountered bugs with =auto-dictionary-mode=, especially in *daemon

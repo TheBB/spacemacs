@@ -239,6 +239,11 @@ or lists of these.")
 ;; Highlight keywords like TODO, FIXME, etc.
 (add-hook 'prog-mode-hook 'spacemacs/highlight-TODO-words)
 
+;; Link to documentation files from anywhere
+(defvar org-link-abbrev-alist)
+(push `("spacemacs-doc" . ,(concat "file:" spacemacs-docs-directory "DOCUMENTATION.org::%s"))
+      org-link-abbrev-alist)
+
 ;; ---------------------------------------------------------------------------
 ;; Session
 ;; ---------------------------------------------------------------------------

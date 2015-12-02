@@ -11,26 +11,17 @@
    - [[Ledger][Ledger]]
 
 * Description
-
 This layer adds finance related packages:
 - [[https://github.com/ledger/ledger][ledger]] support via [[https://github.com/ledger/ledger/tree/next/lisp][ledger-mode]]
 
 [[file:img/ledger.png]]
 
 * Install
-
 ** Layer
-
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(finance))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 * Configuration
-
 ** Ledger
-
 You can set what column transaction posts are aligned to on
 the right by setting the variable =ledger-post-amount-alignment-column= in
 your =dotspacemacs/user-config=.  The default value, set in the layer, is =62=.
@@ -41,7 +32,6 @@ your =dotspacemacs/user-config=.  The default value, set in the layer, is =62=.
 #+END_SRC
 
 * Key bindings
-
 ** Ledger
 
 | Key Binding | Description                                   |

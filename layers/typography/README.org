@@ -18,18 +18,13 @@ provides modes to automatically insert and cycle among typographic characters:
   available on Emacs 25).
 
 * Install
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(typography))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 Typographic editing however is disabled by default.  To enable it by default set
 =typography-enable-typographic-editing= to =t=:
 
 #+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers
-                '(typography :variables typography-enable-typographic-editing t))
+  (typography :variables typography-enable-typographic-editing t)
 #+END_SRC
 
 This setting enables automatic insertion of non-breaking spaces where required

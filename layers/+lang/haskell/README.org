@@ -25,7 +25,7 @@
    - [[Cabal commands][Cabal commands]]
    - [[Cabal files][Cabal files]]
    - [[Ghc-mod][Ghc-mod]]
-     - [[insert template][insert template]]
+     - [[Insert template][Insert template]]
  - [[FAQ][FAQ]]
    - [[REPL doesn't work][REPL doesn't work]]
    - [[REPL is stuck][REPL is stuck]]
@@ -43,11 +43,7 @@ This layer adds support for the [[https://www.haskell.org/][Haskell]] language.
 
 * Install
 ** Layer
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-(setq-default dotspacemacs-configuration-layers '(haskell))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 ** Dependencies
 This layer requires some [[https://www.haskell.org/cabal/][cabal]] packages:
@@ -94,9 +90,8 @@ the project root. As it will confuse =ghc-mod=. For more troubleshooting,
 checkout this [[https://github.com/kazu-yamamoto/ghc-mod/wiki#known-issues-related-to-stack][document]].
 
 *** Stack users
-
-Time to time =ghc-mod= is not available via latest Stackage LTS version. So if
-you have problems with calling =stack install ghc-mod=, try to use =stack
+From time to time =ghc-mod= is not available via latest Stackage LTS version. So
+if you have problems with calling =stack install ghc-mod=, try to use =stack
 install ghc-mod --resolver lts-3.1= (the last known LTS version that had
 =ghc-mod=). But even if it doesn't work, don't panic, it's easy to install it
 from sources.
@@ -154,7 +149,6 @@ improved versions from ghci-ng, and a new keybinding available:
 | ~SPC m u~   | finds uses of identifier                                                  |
 
 **** Stack users
-
 =Stack= and =ghci-ng= doesn't play well with each other, so the general advice
 is to avoid mixing them. But, if you want mix them anyway, you'll need to set
 =haskell-process-type= explicitly:
@@ -172,7 +166,6 @@ if you have =stack.yaml= file in the root of your project, =stack-ghci= will be
 used as process type.
 
 **** ghc-mod users
-
 If you want to use ~SPC m h t~ from =ghc-mod= instead of =ghci-ng= - then you
 need to add following line in your =dotspacemacs/user-config=:
 
@@ -333,7 +326,7 @@ ghc-mod commands are prefixed by ~SPC m m~:
 | ~SPC m m >~ | make indent deeper                        |
 | ~SPC m m <~ | make indent shallower                     |
 
-*** insert template
+*** Insert template
 ~SPC m m t~ inserts a template. What this means is that
 In the beginning of a buffer, "module Foo where" is
 inserted. On the function without signature, inferred

@@ -23,21 +23,14 @@ This layer colors your life with:
 - [[https://github.com/syl20bnr/nyan-mode][nyan mode]] display a Nyan cat progress bar in the mode-line.
 
 * Install
-
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(colors))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 ** Enable rainbow-identifiers
-
 To enable the package =rainbow-identifiers= set the variable
-=colors-enable-rainbow-identifiers= to =t=:
+=colors-enable-rainbow-identifiers= to =t=.
 
 #+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(
-    (colors :variables colors-enable-rainbow-identifiers t)))
+  (colors :variables colors-enable-rainbow-identifiers t)
 #+END_SRC
 
 Saturation and lightness of identifiers can be set per theme by adding
@@ -52,13 +45,11 @@ Example:
 #+END_SRC
 
 ** Enable Nyan cat
-
 To enable the package =nyan-mode= set the variable
 =colors-enable-nyan-cat-progress-bar= to =t=:
 
 #+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(
-    (colors :variables colors-enable-nyan-cat-progress-bar t)))
+  (colors :variables colors-enable-nyan-cat-progress-bar t)
 #+END_SRC
 
 It may be handy to enable it only in a GUI, you can do it by using

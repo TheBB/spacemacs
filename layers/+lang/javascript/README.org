@@ -18,7 +18,6 @@
    - [[JSON][JSON]]
 
 * Description
-
 This layer adds support for the JavaScript language using [[https://github.com/mooz/js2-mode][js2-mode]].
 
 ** Features:
@@ -30,11 +29,7 @@ This layer adds support for the JavaScript language using [[https://github.com/m
 - Get the path to a JSON value with [[https://github.com/Sterlingg/json-snatcher][json-snatcher]]
   
 * Install
-
-To use this contribution add it to your =~/.spacemacs=
-#+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(javascript))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 You will also need to install =tern= to use the auto-completion and
 documentation features:
@@ -53,7 +48,6 @@ To activate error checking using flycheck install =JSHint=:
 #+END_SRC
 
 * Configuration
-
 To change how js2-mode indents code, set the variable =js2-basic-offset=, as such:
 
 #+BEGIN_SRC emacs-lisp
@@ -67,7 +61,6 @@ Similarly, to change how js-mode indents JSON files, set the variable =js-indent
 #+END_SRC
 
 * Key Bindings
-
 ** js2-mode
 
 | Key Binding | Description                          |
@@ -87,7 +80,6 @@ Similarly, to change how js-mode indents JSON files, set the variable =js-indent
 | ~SPC m z C~ | toggle hide comments     |
 
 ** Refactoring (js2-refactor)
-
 Bindings should match the plain emacs assignments.
 
 | Key Binding   | Description                                                                                                    |
@@ -130,7 +122,6 @@ Bindings should match the plain emacs assignments.
 | ~SPC m =~   | beautify code in js2-mode, json-mode, web-mode, and css-mode |
 
 *** Documentation (js-doc)
-
 You can check more [[https://github.com/mooz/js-doc/][here]]
 
 | Key Binding   | Description                           |

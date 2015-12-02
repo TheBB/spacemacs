@@ -39,11 +39,7 @@ New to Magit? Checkout the [[http://magit.vc/about.html][official intro]].
 
 * Install
 ** Layer
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-(setq-default dotspacemacs-configuration-layers '(git))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 *** Recommended Settings
 Read the documentation for the =magit-push-always-verify= variable, then you may
@@ -64,8 +60,7 @@ To display the =magit status= buffer in fullscreen set the variable
 
 #+BEGIN_SRC emacs-lisp
   (defun dotspacemacs/user-init ()
-    (setq-default git-magit-status-fullscreen t)
-  )
+    (setq-default git-magit-status-fullscreen t))
 #+END_SRC
 
 ** Magit auto-complete
@@ -86,8 +81,7 @@ layer by setting the variable =git-enable-magit-svn-plugin= to =t=.
 
 #+BEGIN_SRC emacs-lisp
   (defun dotspacemacs/user-init ()
-    (setq-default git-enable-magit-svn-plugin t)
-  )
+    (setq-default git-enable-magit-svn-plugin t))
 #+END_SRC
 
 ** Git

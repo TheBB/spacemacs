@@ -31,11 +31,7 @@ scripts.
 
 * Install
 ** Layer
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(c-c++))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 *Note:* [[https://github.com/tuhdo/semantic-refactor][semantic-refactor]] is only available for Emacs 24.4+
 
@@ -44,9 +40,7 @@ By default header files are opened in =c-mode=, you can open them in =c++-mode=
 by setting the variable =c-c++-default-mode-for-headers= to =c++-mode=.
 
 #+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers
-    '((c-c++ :variables
-             c-c++-default-mode-for-headers 'c++-mode)))
+  (c-c++ :variables c-c++-default-mode-for-headers 'c++-mode)
 #+END_SRC
 
 *Note:* To set the variable for a given project, create a directory local
@@ -58,8 +52,7 @@ To enable Clang support set the layer variable =c-c++-enable-clang-support=
 to =t= in the dotfile:
 
 #+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers
-    '((c-c++ :variables c-c++-enable-clang-support t)))
+  (c-c++ :variables c-c++-enable-clang-support t)
 #+END_SRC
 
 *** clang-format

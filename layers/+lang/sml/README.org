@@ -11,19 +11,12 @@
    - [[REPL][REPL]]
 
 * Description
-
 Adds support for the [[http://www.smlnj.org][SML]] programming language.
 
 * Install
-
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC elisp
-(setq-default dotspacemacs-configuration-layers '(sml))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 * Key Bindings
-
 ** Form Completion
 
 | Key Binding | Description                                                                               |

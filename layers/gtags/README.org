@@ -11,13 +11,11 @@
  - [[Key bindings][Key bindings]]
 
 * Description
-
 =helm-gtags= and =ggtags= are clients for GNU Global. GNU Global is a source
 code tagging system that allows querying symbol locations in source code, such
 as definitions or references.
 
 * Features
-
 - Select any tag in a project retrieves by gtags
 - Resume previous helm-gtags session
 - Jump to a location based on context
@@ -33,9 +31,7 @@ as definitions or references.
 - Jump to a file in tag database
 
 * Install
-
 ** GNU Global
-
 You can install =helm-gtags= from the software repository of your OS. For example, in Ubuntu:
 
 #+BEGIN_SRC sh
@@ -68,7 +64,6 @@ To use this contribution add it to your =~/.spacemacs=
 #+END_SRC
 
 * Usage
-
 Before using the helm-gtags, remember to create a GTAGS database by the following methods:
 
 - From within Emacs, runs the command =helm-gtags-create-tags=, which is bound
@@ -89,7 +84,6 @@ If the language is not directly supported by =gtags= but =ctags=, use this comma
 #+END_SRC
 
 ** Eldoc integration
-
 This layer also integrates =ggtags= for its Eldoc feature. That means, when
 writing code, you can look at the minibuffer (at the bottom) and see variable
 and function definition of the symbol the cursor is on. However, this feature is

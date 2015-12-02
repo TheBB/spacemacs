@@ -42,14 +42,14 @@ This is a WIP, feel free to collaborate.
 
 * Install
 ** Layer
-#+begin_src emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(ipython-notebook))
-#+end_src
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
+
 ** Dependencies
 Install IPython > 3
 #+begin_src sh
   pip install ipython
 #+end_src
+
 ** What needs to be run
 Have an IPython notebook running
 #+begin_src sh
@@ -60,6 +60,7 @@ Have an IPython notebook running
 ** Open Notebook List
 This layer is lazy loaded so the micro-state will only work after you summon the
 command =ein:notebooklist-open= which is bound to ~SPC a i n~
+
 ** Key Bindings
 The key bindings can be used through a micro state or the usual evil-leader.
 

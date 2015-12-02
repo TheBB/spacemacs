@@ -11,7 +11,6 @@
    - [[Navigate through it][Navigate through it]]
 
 * Description
-
 This layer adds support for the [[https://github.com/rejeep/prodigy.el][prodigy]] package to manage external services from
 within Emacs, check the package's documentation for more details
 
@@ -19,17 +18,10 @@ It is recommended to put to put your prodigy services in the
 =dotspacemacs/user-config= part of your =~/.spacemacs= file.
 
 * Install
-
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(prodigy))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 * Key Bindings
-
 ** Spawn prodigy
-
 You start prodigy with this:
 
 | Key Binding | Description             |

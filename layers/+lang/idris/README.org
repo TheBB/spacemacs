@@ -22,14 +22,9 @@ This layer adds support for the [[http://www.idris-lang.org/][Idris]] language.
 * Install
 
 ** Layer
-To use this layer, add it to your =~/.spacemacs=
-
-#+BEGIN_SRC elisp
-(setq-default dotspacemacs-configuration-layers '(idris))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 ** Idris
-
 Idris can be installed using =Haskell's cabal=:
 
 #+BEGIN_SRC sh
@@ -40,7 +35,6 @@ Binaries are also available for some platforms at
 http://www.idris-lang.org/download/
 
 * Key bindings
-
 ** Shorthands
 Several (but not all) of the evil-leader shorthands that =idris-mode= provides
 are reproduced under the local leader.

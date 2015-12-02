@@ -20,11 +20,7 @@ This layer adds support for the [[http://wiki.portal.chalmers.se/agda/pmwiki.php
 
 * Install
 ** Layer
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(agda))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 ** Agda
 Quick instructions to install Agda assuming you have cabal installed:

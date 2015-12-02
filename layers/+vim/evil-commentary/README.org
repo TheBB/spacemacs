@@ -18,11 +18,7 @@ who prefer the behaviour of [[https://github.com/tpope/vim-commentary][vim-comme
 For more details see the [[https://github.com/linktohack/evil-commentary][evil-commentary]] repository.
 
 * Install
-To use this contribution add it to your =~/.spacemacs=.
-
-#+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(evil-commentary))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 * Key bindings
 | Key Binding | Description                   |

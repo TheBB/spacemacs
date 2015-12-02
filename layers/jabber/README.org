@@ -16,19 +16,18 @@
 This layer adds keybindings for jabber.el. jabber.el is a Jabber (XMPP) client for Emacs
 
 * Install
-To use this contribution layer add it to your =~/.spacemacs=
- #+begin_src emacs-lisp
-    (set-default dotspacemacs-configuration-layers '(jabber))
- #+end_src
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 * Key bindings
 
 | Key Binding | Description          |
+|-------------+----------------------|
 | ~SPC a j~   | Connect all accounts |
 
-
 ** Jabber Roster
+
 | Key Binding | Description                          |
+|-------------+--------------------------------------|
 | ~SPC m a~   | Jabber send presence                 |
 | ~SPC m b~   | Jabber get browse                    |
 | ~SPC m d~   | Jabber disconnect                    |
@@ -77,5 +76,4 @@ To simplify joining rooms, you can use something like this:
        (concat hipchat-number "" hipchat-mapping "@conf.hipchat.com")
        hipchat-nickname
        t)))
-
  #+end_src

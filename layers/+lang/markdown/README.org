@@ -21,7 +21,6 @@
    - [[Promotion, Demotion][Promotion, Demotion]]
 
 * Description
-
 This layer adds markdown support to Spacemacs.
 
 ** Features:
@@ -31,20 +30,13 @@ This layer adds markdown support to Spacemacs.
   using the =emoji= layer or having a proper font) :clap:
 
 * Install
-
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(markdown))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 * Usage
-
 To generate a table of contents type on top of the buffer:
 ~SPC : markdown-toc/generate-toc RET~
 
 * Key bindings
-
 ** Element insertion
 
 | Key Binding | Description                                                       |

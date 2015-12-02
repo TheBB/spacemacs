@@ -38,11 +38,7 @@ This layer adds support for the Python language.
 
 * Install
 ** Layer
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(python))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 ** Test runner
 Both =nose= and =pytest= are supported. By default =nose= is used.
@@ -98,7 +94,6 @@ To use =pylookup= on ~SPC m h H~, make sure you update the database first, using
 ~SPC : pylookup-update~.
 
 * Key Bindings
-
 ** Inferior REPL process
 Start a Python or iPython inferior REPL process with ~SPC m s i~.
 If =ipython= is available in system executable search paths, =ipython=
@@ -174,6 +169,7 @@ Test commands start with ~m t~:
 | ~SPC m v s~ | activate a virtual environment with [[https://github.com/yyuu/pyenv][pyenv]]                                    |
 | ~SPC m v u~ | deactivate a virtual environment with [[https://github.com/yyuu/pyenv][pyenv]]                                  |
 | ~SPC m V~   | activate a virtual environment with  [[https://github.com/jorgenschaefer/pyvenv][pyvenv]]                                  |
+
 * Configuration
 ** Fill column
 If you want to customize the fill column value, use something like this inside the ~user-init~ function in your ~.spacemacs~:

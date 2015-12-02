@@ -14,11 +14,7 @@ This layer replaces =helm-M-x= by [[https://github.com/nonsequitur/smex][smex]] 
 activated in the Spacemacs layer.
 
 * Install
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(smex))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 * Key bindings
 

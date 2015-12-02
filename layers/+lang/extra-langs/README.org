@@ -5,7 +5,6 @@
  - [[Description][Description]]
 
 * Description
-
 Adds many more language modes for less common languages, some more niche than others.
 
 These include:

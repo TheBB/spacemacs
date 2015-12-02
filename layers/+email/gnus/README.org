@@ -12,15 +12,9 @@
  - [[Keybindings][Keybindings]]
 
 * Install
-
-To use this contribution layer add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(gnus))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 * Basic Concepts
-
 Gnus is a news reading application. The Gnus terminology can be confusing for
 new users so the basics are listed here:
 
@@ -29,7 +23,6 @@ new users so the basics are listed here:
      the Group Buffer if Topic Mode is enabled(default).
   
 * Adding news sources
-
 Adding news sources can be done in your =.spacemacs= file by adding the
 following:
 
@@ -48,7 +41,6 @@ following:
 For adding RSS Feeds please see the [[Keybindings][keybindings section]].
 
 * Configuring gmail
-
 To configure Gnus with gmail support you can add the following to your
 =.spacemacs= file. 
 
@@ -95,17 +87,15 @@ If you use two-step verification the password has to be an [[https://support.goo
 password]].
 
 * Org MIME in Org layer
-
 It is possible to send beautiful HTML emails using org mode.
 
-Pressing ~SPC m M~ in a message buffer will convert the current message
-from org mode to html.  An org mode buffer can be sent via html email by pressing
-~SPC m m~ in any org mode buffer.
+Pressing ~SPC m M~ in a message buffer will convert the current message from org
+mode to html. An org mode buffer can be sent via html email by pressing ~SPC m
+m~ in any org mode buffer.
 
 * Keybindings
-
-Gnus has very modal default keybindings.
-Please see the [[http://www.gnus.org/manual.html][manual]] for a complete list.
+Gnus has very modal default keybindings. Please see the [[http://www.gnus.org/manual.html][manual]] for a complete
+list.
 
 Basic and Spacemacs specific keybindings can be found in the following table.
 

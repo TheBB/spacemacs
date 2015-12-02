@@ -14,19 +14,12 @@
    - [[Other key bindings][Other key bindings]]
 
 * Description
-
 Adds support for the [[http://racket-lang.org/][Racket]] programming language.
 
 * Install
-
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(racket))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 * Key Bindings
-
 ** Navigation
 
 | Key Binding | Description                         |

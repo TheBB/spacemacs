@@ -6,14 +6,8 @@
  - [[Install][Install]]
 
 * Description
-
 This layer adds syntax highlighting support for vim filetypes, in addition to
 the pentadactyl firefox extension.
 
 * Install
-
-To use this contribution layer add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-(set-default dotspacemacs-configuration-layers '(vimscript))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.

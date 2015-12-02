@@ -7,16 +7,15 @@
  - [[Description][Description]]
  - [[Features][Features]]
  - [[Install][Install]]
-   - [[Layer][Layer]]
-   - [[Configuration][Configuration]]
-     - [[Storing the credentials in your dotfile][Storing the credentials in your dotfile]]
-       - [[Example:][Example:]]
-     - [[Storing the credentials in your Dropbox][Storing the credentials in your Dropbox]]
-       - [[Example:][Example:]]
-     - [[Storing the credentials in authinfo][Storing the credentials in authinfo]]
-     - [[Connecting behind a ZNC bouncer and storing the credentials in authinfo][Connecting behind a ZNC bouncer and storing the credentials in authinfo]]
-       - [[Disclaimer][Disclaimer]]
-       - [[Note][Note]]
+ - [[Configuration][Configuration]]
+   - [[Storing the credentials in your dotfile][Storing the credentials in your dotfile]]
+     - [[Example:][Example:]]
+   - [[Storing the credentials in your Dropbox][Storing the credentials in your Dropbox]]
+     - [[Example:][Example:]]
+   - [[Storing the credentials in authinfo][Storing the credentials in authinfo]]
+   - [[Connecting behind a ZNC bouncer and storing the credentials in authinfo][Connecting behind a ZNC bouncer and storing the credentials in authinfo]]
+     - [[Disclaimer][Disclaimer]]
+     - [[Note][Note]]
  - [[Key Bindings][Key Bindings]]
  - [[Rcirc documentation][Rcirc documentation]]
 
@@ -34,14 +33,9 @@ and ZNC.
   using the =emoji= layer or having a proper font) :clap:
   
 * Install
-** Layer
-To use this contribution add it to your =~/.spacemacs=
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
-#+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(rcirc))
-#+END_SRC
-
-** Configuration
+* Configuration
 There are several ways to configure rcirc supported by the layer:
 - By storing your credentials in =rcirc-server-alist= in your dotfile (not
   secured)
@@ -50,7 +44,7 @@ There are several ways to configure rcirc supported by the layer:
 - By storing your credentials in authinfo (secured)
 - By using a ZNC bouncer _and_ storing your credentials (secured)
   
-*** Storing the credentials in your dotfile
+** Storing the credentials in your dotfile
 You can store your servers configuration along with your credentials in the
 =dotspacemacs/user-config= of your dotfile.
 
@@ -58,7 +52,7 @@ You can store your servers configuration along with your credentials in the
 your dotfile is often stored in a public repository and is not crypted. This
 is convenient but not recommended.
 
-**** Example:
+*** Example:
 #+BEGIN_SRC emacs-lisp
 (setq rcirc-server-alist
   '(("irc.freenode.net"
@@ -68,7 +62,7 @@ is convenient but not recommended.
       :channels ("#emacs"))))
 #+END_SRC
 
-*** Storing the credentials in your Dropbox
+** Storing the credentials in your Dropbox
 You can store your servers configuration along with your credentials in
 your dropbox in the file =~/Dropbox/emacs/pinit-rcirc.el=.
 
@@ -78,7 +72,7 @@ since Dropbox automatically sync your files you may have a lot of copies
 of the file containing your credentials. This is convenient but not
 recommended.
 
-**** Example:
+*** Example:
 #+BEGIN_SRC emacs-lisp
 (setq rcirc-server-alist
   '(("irc.freenode.net"
@@ -88,7 +82,7 @@ recommended.
       :channels ("#emacs"))))
 #+END_SRC
 
-*** Storing the credentials in authinfo
+** Storing the credentials in authinfo
 This method is considered secured and is the recommended way to configure
 rcirc.
 
@@ -117,7 +111,7 @@ rcirc.
        :channels ("#emacs"))))
    #+END_SRC
 
-*** Connecting behind a ZNC bouncer and storing the credentials in authinfo
+** Connecting behind a ZNC bouncer and storing the credentials in authinfo
 This methods is also secured since it uses authinfo _but_ you must secure your
 ZNC server configuration as well!
 
@@ -126,12 +120,12 @@ connects to your IRC channels on your behalf, instead of connecting to the IRC
 server you connect to your ZNC server. The ZNC server can store the discussions
 in a buffer while you are not connected.
 
-**** Disclaimer
+*** Disclaimer
 This assumes that you are familiar with ZNC and you have a ZNC server properly
 setup. If it is not the case then it is recommended to read about ZNC
 [[http://wiki.znc.in/ZNC][here]]. There is also an installation guide for Ubuntu [[https://www.digitalocean.com/community/tutorials/how-to-install-znc-an-irc-bouncer-on-an-ubuntu-vps][here]].
 
-**** Note
+*** Note
 For now authinfo is mandatory to use the ZNC configuration.
 
 1) To enable ZNC support set the variable =rcirc-enable-znc-support= to =t= in

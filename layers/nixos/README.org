@@ -12,7 +12,6 @@
    - [[NixOS Options][NixOS Options]]
 
 * Description
-
 This layer adds tools for better integration of emacs in NixOS.
 
 ** Features:
@@ -21,16 +20,10 @@ This layer adds tools for better integration of emacs in NixOS.
 - Helm Lookup for NixOS Options  [[https://github.com/travisbhartwell/nix-emacs/blob/master/helm-nixos-options.el][helm-nixos-options]]
 
 * Install
-
 ** Layer
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(nixos))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 * Key Bindings
-
 ** NixOS Options
 
 | Key Binding | Description             |

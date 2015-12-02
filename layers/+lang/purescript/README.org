@@ -12,24 +12,16 @@
    - [[REPL][REPL]]
 
 * Description
-
 This layer provides basic Purescript editing support for spacemacs
 thanks to the following packages:
 - [[https://github.com/dysinger/purescript-mode][purescript-mode]]
 - [[https://github.com/ardumont/emacs-psci][psci]]
 
 * Install
-
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(purescript))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 * Key bindings
-
 ** Purescript
-
 *** Imports
 
 | Key Binding | Description                                                   |
@@ -40,9 +32,8 @@ To use this contribution add it to your =~/.spacemacs=
 | ~SPC m i n~ | Navigate to the imports                                       |
 
 ** REPL
-
-[[https://github.com/ardumont/emacs-psci][psci]] provides a very basic REPL for purescript. The following key
-bindings are available:
+[[https://github.com/ardumont/emacs-psci][psci]] provides a very basic REPL for purescript. The following key bindings are
+available:
 
 | Key Binding | Description                                                                      |
 |-------------+----------------------------------------------------------------------------------|

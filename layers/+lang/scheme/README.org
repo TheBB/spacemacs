@@ -14,19 +14,13 @@
    - [[Evaluation][Evaluation]]
 
 * Description
-
 A spacemacs contribution layer providing Scheme support via [[http://www.nongnu.org/geiser/][Geiser]].
 
 * Install
+The scheme layer currently supports: Chicken and Guile. Combined usage of
+racket-mode and geiser has not been tested.
 
-The scheme layer currently supports: Chicken and Guile. Combined usage of racket-mode
-and geiser has not been tested.
-
-To use this layer, simply add it to =~/.spacemacs=:
-
-#+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(scheme))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 For full Chicken support, the following commands should be run:
 

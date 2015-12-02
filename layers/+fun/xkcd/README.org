@@ -20,11 +20,7 @@ Features:
 - Cache the comics in =.cache/xkcd=
 
 * Install
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(xkcd))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 * Key Bindings
 ** Tell me how to spawn the xkcd greatness!!

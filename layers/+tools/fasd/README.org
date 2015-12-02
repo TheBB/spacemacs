@@ -9,24 +9,16 @@
  - [[Keybindings][Keybindings]]
 
 * Description
-
 This layer adds integration of [[https://github.com/clvv/fasd][fasd]] which is a command line tool
 to quickly jump between locations in a POSIX shell.
 
 The integration is implemented in the package [[https://github.com/steckerhalter/emacs-fasd][emacs-fasd]].
 
 * Install
-
 ** Layer
-
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-(setq-default dotspacemacs-configuration-layers '(fasd))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 ** fasd
-
 [[https://github.com/clvv/fasd][fasd]] must be installed on your system. The general installation
 instructions can be found in the repository [[https://github.com/clvv/fasd#install][README]]
 

@@ -19,12 +19,7 @@ This layer provides some integration with the Google Chrome browser.
 
 * Install
 ** Layer
-
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(chrome))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 ** Chrome extension
 [[http://melpa.org/#/edit-server][edit-server]] is a server that responds to edit requests sent Chrome via the

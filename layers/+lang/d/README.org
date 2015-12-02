@@ -12,8 +12,4 @@ This simple layer adds support for the [[http://dlang.org/][D language]].
 It adds =d-mode= as well as integrating it with =auto-completion= and =syntax-checking=.
 
 * Install
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(d))
-#+END_SRC
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.

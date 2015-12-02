@@ -8,12 +8,11 @@
  - [[Install][Install]]
    - [[Layer][Layer]]
  - [[Configuration][Configuration]]
-   - [[Differences between margin programs:][Differences between margin programs:]]
+   - [[Differences between margin programs][Differences between margin programs]]
  - [[Key Bindings][Key Bindings]]
    - [[Version Control Micro-state][Version Control Micro-state]]
 
 * Description
-
 This layers adds general configuration for [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Version-Control.html][Emacs VC]].
 It should work with all VC backends such as Git, Mercurial, Bazaar, SVN, etc...
 
@@ -23,20 +22,11 @@ git-gutter, or git-gutter+
 - adds vcs micro-state ~SPC g.~ to allow quick navigation and modification of
 buffer hunks.
 
-
 * Install
-
 ** Layer
-
-To use this contribution add it to your =~/.spacemacs=
-
-#+BEGIN_SRC emacs-lisp
-(setq-default dotspacemacs-configuration-layers '(version-control))
-#+END_SRC
-
+See [[spacemacs-doc:How to install][how to install configuration layers]] in the main documentation.
 
 * Configuration
-
 You can choose the package to facilitate the diff micro-state and show margins
 by setting =version-control-diff-tool=
 
@@ -53,8 +43,7 @@ To automatically enable diff margins in all buffers, set
                   verstion-control-global-margin t)
 #+END_SRC
 
-** Differences between margin programs:
-
+** Differences between margin programs
 This layer contains generalized mappings for three diff margin packages:
 diff-hl, git-gutter, and git-gutter+.
 
