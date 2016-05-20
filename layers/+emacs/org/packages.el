@@ -28,6 +28,7 @@
     (org-mime :location built-in)
     org-pomodoro
     org-present
+    (org-projectile :toggle (configuration-layer/package-usedp 'projectile))
     org-repo-todo
     (ox-gfm :location local)
     persp-mode
@@ -481,23 +482,33 @@ Headline^^            Visit entry^^               Filter^^                    Da
       (add-hook 'org-present-mode-hook 'spacemacs//org-present-start)
       (add-hook 'org-present-mode-quit-hook 'spacemacs//org-present-end))))
 
-(defun org/init-org-repo-todo ()
-  (use-package org-repo-todo
-    :commands (ort/todo-root ort/find-root ort/todo-file)
+(defun org/init-org-projectile ()
+  (use-package org-projectile
     :init
     (progn
       (spacemacs/set-leader-keys
-        "Ct" 'ort/capture-todo
-        "CT" 'ort/capture-checkitem
-        "aop" 'ort/list-project-todos)
-      (when (configuration-layer/package-usedp 'projectile)
-        (spacemacs/set-leader-keys
-          "aoT" 'ort/list-all-todos
-          "aoP" 'ort/list-all-project-todos)))
+        "Ct" 'org-projectile:capture-for-current-project))
     :config
-    ;; Better default capture template
-    (setcdr (cdddr (assoc "ort/todo" org-capture-templates))
-            '("* TODO %?\n%U\n\n%i" :empty-lines 1))))
+    (progn
+      (org-projectile:per-repo))))
+
+;; (defun org/init-org-repo-todo ()
+;;   (use-package org-repo-todo
+;;     :commands (ort/todo-root ort/find-root ort/todo-file)
+;;     :init
+;;     (progn
+;;       (spacemacs/set-leader-keys
+;;         "Ct" 'ort/capture-todo
+;;         "CT" 'ort/capture-checkitem
+;;         "aop" 'ort/list-project-todos)
+;;       (when (configuration-layer/package-usedp 'projectile)
+;;         (spacemacs/set-leader-keys
+;;           "aoT" 'ort/list-all-todos
+;;           "aoP" 'ort/list-all-project-todos)))
+;;     :config
+;;     ;; Better default capture template
+;;     (setcdr (cdddr (assoc "ort/todo" org-capture-templates))
+;;             '("* TODO %?\n%U\n\n%i" :empty-lines 1))))
 
 (defun org/init-ox-gfm ()
   ;; installing this package from melpa is buggy,
