@@ -43,21 +43,21 @@ import os.path
 import re
 import ycm_core
 
-SOURCE_EXTENSIONS = ['.cpp', '.cxx', '.cc', '.c', '.m', '.mm']
-HEADER_EXTENSIONS = ['.h', '.hxx', '.hpp', '.hh']
+SOURCE_EXTENSIONS = ['.cpp', '.cxx', '.cc', '.c', '.m', '.mm',
+                     '.CPP', '.CXX', '.CC', '.C', '.M', '.MM']
+HEADER_EXTENSIONS = ['.h', '.hxx', '.hpp', '.hh'
+                     '.H', '.HXX', '.HPP', '.HH']
 
 # This function is called by ycmd.
 def FlagsForFile(filename):
     logging.info("%s: Getting flags for %s" % (__file__, filename))
-    root = os.path.realpath(filename);
-    compilation_db_flags = FlagsFromCompilationDatabase(root, filename)
-    if compilation_db_flags:
-        flags = compilation_db_flags
-    else:
+    root = os.path.realpath(filename)
+    flags = FlagsFromCompilationDatabase(root, filename)
+    if not flags:
         flags = FlagsFromClangComplete(root, filename)
     extra_flags = GetUserExtraFlags(filename)
     if extra_flags:
-        flags = flags + extra_flags
+        flags.append(extra_flags)
     if flags:
         flags = [ flag for flag in flags if not flag.startswith("-m") ] # strip -m flags
         logging.info("%s: Flags = [\n\t\t%s\n]"
@@ -95,7 +95,7 @@ def FlagsFromCompilationDatabase(root, filename):
             return None
         return MakeRelativePathsInFlagsAbsolute(compilation_info.compiler_flags_,
                                                 compilation_info.compiler_working_dir_)
-    except Exception, e:
+    except Exception as e:
         logging.info("%s: Could not get compilation flags from db: %s"
                      % (os.path.basename(filename), e))
         return None
@@ -126,11 +126,11 @@ def FindNearest(path, target, filename):
     if(os.path.isfile(candidate) or os.path.isdir(candidate)):
         logging.info("%s: Found nearest %s at %s"
                      % (os.path.basename(filename), target, candidate))
-        return candidate;
+        return candidate
     else:
-        parent = os.path.dirname(os.path.abspath(path));
+        parent = os.path.dirname(os.path.abspath(path))
         if(parent == path):
-            raise RuntimeError("could not find %s" % target);
+            raise RuntimeError("could not find %s" % target)
         return FindNearest(parent, target, filename)
 
 def FindFileInDb(database, filename):
@@ -148,7 +148,7 @@ def FindFileInDb(database, filename):
 def FindSiblingFileForHeader(database, filename):
     logging.info("%s: Trying to find a sibling source file for that header in database..."
                  % (os.path.basename(filename)))
-    basename = os.path.splitext(filename)[0]
+    basename = '.'.join(os.path.splitext(filename)[:-1])
     for extension in SOURCE_EXTENSIONS:
         replacement_file = basename + extension
         if os.path.exists(replacement_file):
