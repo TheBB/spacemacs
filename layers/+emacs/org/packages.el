@@ -207,6 +207,10 @@ Will work on both org-mode and any mode that accepts plain html."
         "Sh" 'org-promote-subtree
         "Sj" 'org-move-subtree-down
         "Sk" 'org-move-subtree-up
+        "S <left>" 'org-demote-subtree
+        "S <right>" 'org-promote-subtree
+        "S <down>" 'org-move-subtree-down
+        "S <up>" 'org-move-subtree-up
 
         ;; tables
         "ta" 'org-table-align

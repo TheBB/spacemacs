@@ -234,12 +234,12 @@ the following snippet. Note that this may have unintended consequences until
 
 *** Tree
 
-| Key Binding | Description           |
-|-------------+-----------------------|
-| ~SPC m S l~ | org-demote-subtree    |
-| ~SPC m S h~ | org-promote-subtree   |
-| ~SPC m S k~ | org-move-subtree-up   |
-| ~SPC m S j~ | org-move-subtree-down |
+| Key Binding                      | Description           |
+|----------------------------------+-----------------------|
+| ~SPC m S l~ or ~SPC m S <left>~  | org-demote-subtree    |
+| ~SPC m S h~ or ~SPC m S <right>~ | org-promote-subtree   |
+| ~SPC m S k~ or ~SPC m S <up>~    | org-move-subtree-up   |
+| ~SPC m S j~ or ~SPC m S <down>~  | org-move-subtree-down |
 
 | Key Binding | Description                     |
 |-------------+---------------------------------|
