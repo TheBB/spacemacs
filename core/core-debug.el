@@ -129,7 +129,7 @@ seconds to load")
                 (with-current-buffer "*load-times*"
                   (goto-char (point-max))
                   (insert (format "[%.3f] Spacemacs finished initializing\n\n"
-                                  (float-time (time-since emacs-start-time)) )))))
+                                  (float-time (time-since emacs-start-time)))))))
 
     (advice-add 'load :around #'spacemacs//load-timer)
     (advice-add 'require :around #'spacemacs//load-timer)

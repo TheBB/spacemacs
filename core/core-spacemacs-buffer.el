@@ -301,20 +301,18 @@ MIN-WIDTH is the minimal width of the frame, frame included.  The frame will not
             min-width (or min-width 1)
             max-width (if (< max-width min-width) min-width max-width)
             max-width (if (> max-width spacemacs-buffer--window-width)
-                              spacemacs-buffer--window-width
-                            max-width))
+                          spacemacs-buffer--window-width
+                        max-width))
       (when (< width min-width)
         (setq width min-width
               fill-column (max 0 (- min-width 2 (* hpadding 2)))))
       (when (> width max-width)
         (setq width max-width
               fill-column (max 0 (- max-width 2 (* hpadding 2)))))
-      (spacemacs-buffer||notes-adapt-caption-to-width topcaption
-                                                      topcaption-length
-                                                      width)
-      (spacemacs-buffer||notes-adapt-caption-to-width botcaption
-                                                      botcaption-length
-                                                      width)
+      (spacemacs-buffer||notes-adapt-caption-to-width
+       topcaption topcaption-length width)
+      (spacemacs-buffer||notes-adapt-caption-to-width
+       botcaption botcaption-length width)
       (fill-region (point-min) (point-max) nil nil)
       (concat
        "╭─" (when topcaption (propertize (concat " " topcaption " ")
@@ -370,12 +368,8 @@ ADDITIONAL-WIDGETS: a function for inserting a widget under the frame."
     (forward-line)
     (let* ((buffer-read-only nil)
            (note (concat "\n"
-                         (spacemacs-buffer//notes-render-framed-text file
-                                                                     topcaption
-                                                                     botcaption
-                                                                     2
-                                                                     nil
-                                                                     80))))
+                         (spacemacs-buffer//notes-render-framed-text
+                          file topcaption botcaption 2 nil 80))))
       (save-restriction
         (narrow-to-region (point) (point))
         (add-to-list 'spacemacs-buffer--note-widgets (widget-create 'text note))
@@ -387,7 +381,7 @@ ADDITIONAL-WIDGETS: a function for inserting a widget under the frame."
             (beginning-of-line)
             (insert (make-string padding ?\s))
             (forward-line))))
-     (save-excursion
+      (save-excursion
         (while (re-search-backward "\\[\\[\\(.*\\)\\]\\]" nil t)
           (make-text-button (match-beginning 1)
                             (match-end 1)

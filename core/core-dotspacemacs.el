@@ -367,8 +367,9 @@ tool of the list. Supported tools are `rg', `ag', `pt', `ack' and `grep'.")
 specified with an installed package.
 NOT USED FOR NOW :-)")
 
-(defvar dotspacemacs-startup-lists '((recents  . 5)
-                                    (projects . 7))
+(defvar dotspacemacs-startup-lists
+  '((recents  . 5)
+    (projects . 7))
   "Association list of items to show in the startup buffer of the form
 `(list-type . list-size)`. If nil it is disabled.
 Possible values for list-type are:
@@ -656,8 +657,8 @@ If ARG is non nil then Ask questions to the user before installing the dotfile."
               ?[ "%["
               ?] "%]"
               ?% "%%"
-              ?- "%-"
-              )))
+              ?- "%-")))
+
     (format-spec title-format fs)))
 
 (defun dotspacemacs/safe-load ()
@@ -752,8 +753,8 @@ error recovery."
     "is \'vim, \'emacs or \'hybrid or and list with `:variable' keyword")
    (spacemacs//test-var
     (lambda (x) (member x '(original cache nil)))
-    'dotspacemacs-auto-save-file-location (concat "is one of \'original, "
-                                                  "\'cache or nil"))
+    'dotspacemacs-auto-save-file-location
+    "is one of \'original, \'cache or nil")
    (spacemacs//test-var
     (lambda (x) (member x '(all any current nil)))
     'dotspacemacs-highlight-delimiters "is one of \'all, \'any, \'current or nil")
@@ -761,10 +762,9 @@ error recovery."
     (lambda (x)
       (let ((el (or (car-safe x) x))
             (list-size (cdr-safe x)))
-      (member el '(recents bookmarks projects todos agenda))))
-    'dotspacemacs-startup-lists (concat "includes \'recents, "
-                              "\'bookmarks, \'todos, "
-                              "\'agenda or \'projects"))
+        (member el '(recents bookmarks projects todos agenda))))
+    'dotspacemacs-startup-lists
+    "includes \'recents, \'bookmarks, \'todos, \'agenda or \'projects")
    (spacemacs//test-list
     (lambda (x)
       (let ((el (or (car-safe x) x))
@@ -815,7 +815,7 @@ error recovery."
           (prog1
               ;; execute all tests no matter what
               (cl-reduce (lambda (x y)
-                        (and (funcall y) x))
+                           (and (funcall y) x))
                       '(dotspacemacs//test-dotspacemacs/layers
                         dotspacemacs//test-dotspacemacs/init)
                       :initial-value t)

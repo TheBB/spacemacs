@@ -486,8 +486,8 @@ layer directory."
   (interactive)
   (let* ((current-layer-paths (mapcar (lambda (dir) (expand-file-name dir))
                                       (cl-pushnew
-                               configuration-layer-private-layer-directory
-                               dotspacemacs-configuration-layer-path)))
+                                       configuration-layer-private-layer-directory
+                                       dotspacemacs-configuration-layer-path)))
          (other-choice "Another directory...")
          (helm-lp-source
           `((name . "Configuration Layer Paths")
@@ -503,12 +503,12 @@ layer directory."
          (layer-path (cond
                       ((string-equal layer-path-sel other-choice)
                        (read-directory-name (concat "Other configuration "
-                                                    "layer path: ") "~/" ))
+                                                    "layer path: ") "~/"))
                       ((member layer-path-sel current-layer-paths)
                        layer-path-sel)
                       (t
                        (error "Please select an option from the list"))))
-         (name (read-from-minibuffer "Configuration layer name: " ))
+         (name (read-from-minibuffer "Configuration layer name: "))
          (layer-dir (concat layer-path "/" name)))
     (cond
      ((string-equal "" name)
@@ -1010,8 +1010,8 @@ USEDP if non-nil indicates that made packages are used packages."
            'auto-mode-alist
            `(,ext . (lambda ()
                       (configuration-layer//auto-mode
-                       ',layer-name ',mode))))
-          ))
+                       ',layer-name ',mode))))))
+
       ;; configure `interpreter-mode-alist'
       (when interpreter
         (let ((regex (car interpreter))
@@ -1019,7 +1019,7 @@ USEDP if non-nil indicates that made packages are used packages."
           (add-to-list
            'interpreter-mode-alist
            `(,regex . (lambda () (configuration-layer//auto-mode
-                               ',layer-name ',mode)))))))))
+                                  ',layer-name ',mode)))))))))
 
 (defun configuration-layer//auto-mode (layer-name mode)
   "Auto mode support of lazily installed layers."
@@ -1649,7 +1649,7 @@ LAYER must not be the owner of PKG."
                 (concat "\nAn error occurred while pre-configuring %S "
                         "in layer %S (error: %s)\n")
                 pkg-name layer err)))))))
-          (oref pkg :pre-layers))
+     (oref pkg :pre-layers))
     ;; init
     (spacemacs-buffer/message (format "  -> init (%S)..." owner))
     (funcall (intern (format "%S/init-%S" owner pkg-name)))
@@ -1671,7 +1671,7 @@ LAYER must not be the owner of PKG."
                 (concat "\nAn error occurred while post-configuring %S "
                         "in layer %S (error: %s)\n")
                 pkg-name layer err)))))))
-          (oref pkg :post-layers))))
+     (oref pkg :post-layers))))
 
 (defun configuration-layer//cleanup-rollback-directory ()
   "Clean up the rollback directory."
@@ -2075,8 +2075,8 @@ depends on it."
              (cadr (assq 'built-in stats))))
     (with-current-buffer (get-buffer-create spacemacs-buffer-name)
       (let ((buffer-read-only nil))
-	(spacemacs-buffer//center-line)
-	(insert "\n")))))
+        (spacemacs-buffer//center-line)
+        (insert "\n")))))
 
 (defun configuration-layer/load-or-install-protected-package
     (pkg &optional install log file-to-load)
@@ -2117,7 +2117,7 @@ FILE-TO-LOAD is an explicit file to load after the installation."
                   (configuration-layer/get-elpa-package-install-directory pkg))))
         (unless (configuration-layer/get-package pkg)
           (let ((obj (configuration-layer/make-package pkg 'system)))
-                (configuration-layer//add-package obj)))
+            (configuration-layer//add-package obj)))
         (require pkg nil 'noerror)
         (when file-to-load
           (load-file (concat pkg-elpa-dir file-to-load)))

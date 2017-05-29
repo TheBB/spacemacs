@@ -159,9 +159,8 @@
     (tao-yin                          . tao-theme)
     (tao-yang                         . tao-theme)
     (farmhouse-light                  . farmhouse-theme)
-    (farmhouse-dark                   . farmhouse-theme)
-    )
-  "alist matching a theme name with its package name, required when
+    (farmhouse-dark                   . farmhouse-theme))
+  "Alist matching a theme name with its package name, required when
 package name does not match theme name + `-theme' suffix.")
 
 (defvar spacemacs-post-theme-change-hook nil

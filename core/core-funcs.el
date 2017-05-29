@@ -201,7 +201,7 @@ passed-tests and total-tests."
           (when (boundp 'passed-tests) (setq passed-tests (1+ passed-tests)))
           (insert (format "*** PASS: %s\n" var-val)))
       (insert (propertize (format "*** FAIL: %s\n" var-val)
-                                  'font-lock-face 'font-lock-warning-face)))))
+                          'font-lock-face 'font-lock-warning-face)))))
 
 (defun spacemacs//test-list (pred varlist test-desc &optional element-desc)
   "Test PRED against each element of VARLIST and print test

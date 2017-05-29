@@ -73,9 +73,9 @@
       `(
         ,spacemacs-core-directory
         ,(concat spacemacs-core-directory "libs/")
-        ,(concat spacemacs-core-directory "libs/spacemacs-theme/")
+        ,(concat spacemacs-core-directory "libs/spacemacs-theme/")))
         ;; ,(concat spacemacs-core-directory "aprilfool/")
-        ))
+
 
 ;; themes
 (add-to-list 'custom-theme-load-path (concat spacemacs-core-directory
