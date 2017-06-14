@@ -426,7 +426,7 @@ If NO-INSTALL is non nil then install steps are skipped."
   (configuration-layer//declare-used-packages configuration-layer--used-layers)
   ;; then load the functions and finally configure the layers
   (configuration-layer//load-layers-files configuration-layer--used-layers
-                                          '("funcs.el"))
+                                          '("funcs"))
   (configuration-layer//configure-layers configuration-layer--used-layers)
   ;; pre-filter some packages to save some time later in the loading process
   (setq configuration-layer--used-distant-packages
@@ -469,7 +469,7 @@ If NO-INSTALL is non nil then install steps are skipped."
   ;; configure used packages
   (configuration-layer//configure-packages configuration-layer--used-packages)
   (configuration-layer//load-layers-files configuration-layer--used-layers
-                                          '("keybindings.el"))
+                                          '("keybindings"))
   (run-hooks 'configuration-layer-post-sync-hook))
 
 (defun configuration-layer/load-auto-layer-file ()
@@ -570,13 +570,11 @@ indexed layers for the path."
                         'unspecified))
              (variables (when (listp layer-specs)
                           (spacemacs/mplist-get layer-specs :variables)))
-             (packages-file (concat dir "packages.el"))
+             (packages-file (concat dir "packages"))
              (packages
               (if (and (or usedp configuration-layer--load-packages-files)
-                       (file-exists-p packages-file))
-                  (progn
-                    (load packages-file)
-                    (symbol-value (intern (format "%S-packages" layer-name))))
+                       (load packages-file 'noerror))
+                  (symbol-value (intern (format "%S-packages" layer-name)))
                 (oref obj :packages)))
              (selected-packages (if packages
                                     (configuration-layer//select-packages
@@ -1211,7 +1209,7 @@ wether the declared layer is an used one or not."
           (configuration-layer//add-layer obj usedp)
           (configuration-layer//set-layer-variables obj)
           (when (or usedp configuration-layer--load-packages-files)
-            (configuration-layer//load-layer-files layer-name '("layers.el"))))
+            (configuration-layer//load-layer-files layer-name '("layers"))))
       (configuration-layer//warning "Unknown layer %s declared in dotfile."
                                     layer-name))))
 
@@ -1283,7 +1281,7 @@ wether the declared layer is an used one or not."
   "Configure layers with LAYER-NAMES."
   (let ((warning-minimum-level :error))
     (dolist (layer-name layer-names)
-      (configuration-layer//load-layer-files layer-name '("config.el")))))
+      (configuration-layer//load-layer-files layer-name '("config")))))
 
 (defun configuration-layer//declare-used-packages (layers)
   "Declare used packages contained in LAYERS."
@@ -1305,8 +1303,7 @@ wether the declared layer is an used one or not."
   (let ((obj (configuration-layer/get-layer layer-name)))
     (when obj
       (dolist (file files)
-        (let ((file (concat (oref obj :dir) file)))
-          (if (file-exists-p file) (load file)))))))
+        (load (concat (oref obj :dir) file) 'noerror)))))
 
 (defun configuration-layer/configured-packages-stats (packages)
   "Return a statistics alist regarding the number of configured PACKAGES."
@@ -1396,7 +1393,7 @@ wether the declared layer is an used one or not."
         (goto-char (point-max))
         (configuration-layer//install-packages sorted-pkg)
         (configuration-layer//configure-packages sorted-pkg)
-        (configuration-layer//load-layer-files layer '("keybindings.el"))
+        (configuration-layer//load-layer-files layer '("keybindings"))
         (oset layer :lazy-install nil)
         (switch-to-buffer last-buffer)))))
 

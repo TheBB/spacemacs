@@ -179,7 +179,7 @@ ask the user if a new layout should be created."
 
 (defun spacemacs//custom-layout-func-name (name)
   "Return the name of the custom-perspective function for NAME."
-  (intern (concat "spacemacs/custom-perspective-" name)))
+  (intern (format "spacemacs/custom-perspective-%s" name)))
 
 (defmacro spacemacs|define-custom-layout (name &rest props)
   "Define a custom-perspective called NAME.
@@ -200,17 +200,11 @@ Available PROPS:
   One or several EXPRESSIONS that are going to be evaluated after
   we change into the perspective NAME."
   (declare (indent 1))
-  (let* ((name (if (symbolp name)
-                   (symbol-value name)
-                 name))
-         (func (spacemacs//custom-layout-func-name name))
-         (binding-prop (car (spacemacs/mplist-get props :binding)))
-         (binding (if (symbolp binding-prop)
-                      (symbol-value binding-prop)
-                    binding-prop))
+  (let* ((func (spacemacs//custom-layout-func-name name))
+         (binding (car (spacemacs/mplist-get props :binding)))
          (body (spacemacs/mplist-get props :body))
-         (already-defined? (cdr (assoc binding
-                                       spacemacs--custom-layout-alist))))
+         (already-defined? `(cdr (assoc ,binding
+                                        spacemacs--custom-layout-alist))))
     `(progn
        (defun ,func ()
          ,(format "Open custom perspective %s" name)
@@ -224,12 +218,12 @@ Available PROPS:
        (if ,already-defined?
            (unless (equal ,already-defined? ,name)
              (spacemacs-buffer/message "Replacing existing binding \"%s\" for %s with %s"
-                                       ,binding ,already-defined? ,name)
+                                ,binding ,already-defined? ,name)
              (setq spacemacs--custom-layout-alist
                    (delete (assoc ,binding spacemacs--custom-layout-alist)
-                     spacemacs--custom-layout-alist))
-             (push '(,binding . ,name) spacemacs--custom-layout-alist))
-         (push '(,binding . ,name) spacemacs--custom-layout-alist)))))
+                           spacemacs--custom-layout-alist))
+             (push (list ,binding ,name ',func) spacemacs--custom-layout-alist))
+         (push (list ,binding ,name ',func) spacemacs--custom-layout-alist)))))
 
 (defun spacemacs/select-custom-layout ()
   "Update the custom-perspectives transient-state and then activate it."
@@ -242,7 +236,7 @@ Available PROPS:
   (if spacemacs--custom-layout-alist
       (mapconcat (lambda (custom-persp)
                    (format "[%s] %s"
-                           (car custom-persp) (cdr custom-persp)))
+                           (car custom-persp) (cadr custom-persp)))
                  spacemacs--custom-layout-alist " ")
     (spacemacs-buffer/warning (format "`spacemacs--custom-layout-alist' variable is empty" ))))
 
@@ -254,8 +248,8 @@ format so they are supported by the
   (let (bindings)
     (dolist (custom-persp spacemacs--custom-layout-alist bindings)
       (let* ((binding (car custom-persp))
-             (name (cdr custom-persp))
-             (func-name (spacemacs//custom-layout-func-name name)))
+             (name (cadr custom-persp))
+             (func-name (caddr custom-persp)))
         (push (list binding func-name :exit t) bindings)))
     (eval `(spacemacs|define-transient-state custom-layouts
              :doc (concat (spacemacs//custom-layouts-ms-documentation))
